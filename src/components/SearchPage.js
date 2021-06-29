@@ -12,19 +12,19 @@ const SearchPage = () => {
     //for now just get the first user
 
     useEffect(()=> {
-        console.log("hit0")
-         fetch("https://jsonplaceholder.typicode.com/users/1/albums")
+         fetch("https://jsonplaceholder.typicode.com/photos")
             .then((response) => response.json())
             .then((json) => {
                 console.log(json);
                 setAblumListInit(json);
-                setAlbumList(json);
+                // setAlbumList(json);                                          //set to show all albums on page load
             });
     },[]);
 
     const updateInput = async (input) => {
         const filteredData = albumListInit.filter(data => {
-            return data.title.toLowerCase().includes(input.toLowerCase())                   
+            // return data.title.toLowerCase().includes(input.toLowerCase())     //search by title
+            return data.albumId == input                   
             }) 
         setInput(input);
         setAlbumList(filteredData);
@@ -36,7 +36,7 @@ const SearchPage = () => {
                 input={input}
                 updateInput={updateInput}
             />
-            <div className="albumCardContainer">
+            <div>
                 <AlbumCard albumList={albumList} />
             </div>
         </div>

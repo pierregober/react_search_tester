@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
-    <div className="App test">
+    <div className="App headerStyler">
         <b>Pierre's Simple React Search App</b>
     </div>
   );
