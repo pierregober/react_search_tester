@@ -8,7 +8,7 @@ const AlbumCard = ({albumList = []}) => {
                     //does it have data? 
                     if(data){
                         return (
-                            <div className="card cardStyler" style={{width: 18 + "rem"}} key={data.id}>
+                            <div className="card cardStyler mx-auto" style={{width: 18 + "rem"}} key={data.id}>
                                 <img src={data.url}/>
                                 <div className="card-body">
                                     <h5 className="card-title"> {data.title}</h5>
